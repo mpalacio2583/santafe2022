@@ -46,6 +46,7 @@
       group_id: "{{basic_firewall.group_id}}"
       instance_type: "{{instance_type}}"
       image: "{{ami_id}}"
+      vpc_subnet_id: subnet-0fd4421cd3378acd7
       wait: yes
     register: basic_ec2
     
