@@ -17,7 +17,6 @@
        instance_type: db.t2.micro
        username: mysql_admin
        password: 1nsecure
-       vpc_id: vpc-0a623c5b90a0c8df0
        tags:
          Environment: testing
          Application: cms 
