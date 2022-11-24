@@ -18,6 +18,7 @@
        username: mysql_admin
        password: 1nsecure
        vpc_security_groups: ansible1
+       subnet: vpc-0a623c5b90a0c8df0
        tags:
          Environment: testing
          Application: cms 
