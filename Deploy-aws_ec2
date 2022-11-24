@@ -17,6 +17,8 @@
       description: "Ansible Security Group"
       region: "{{aws_region}}"
       vpc_id: "{{vpc_ids}}"
+#      aws_access_key: "{{aws_access_key}}"
+#      aws_secret_key: "{{aws_secret_key}}"
       rules:
         - proto: all
           cidr_ip: {{cidr_ips}}
@@ -29,6 +31,8 @@
 
   - name: Create an EC2 instance
     ec2:
+#      aws_access_key: "{{aws_access_key}}"
+#      aws_secret_key: "{{aws_secret_key}}"
       key_name: "{{key_name}}"
       region: "{{aws_region}}"
       group_id: "{{firewall_group_id}}"
