@@ -7,7 +7,7 @@
     instances_name: "{{ db_name }}"
     
   tasks:
-  - name: create an EC2 instance
+  - name: create an RDS instance
     rds:
        command: create
        instance_name: "{{ instances_name }}"  #ingrese el nombre de la instancia.
@@ -17,6 +17,7 @@
        instance_type: db.t2.micro
        username: mysql_admin
        password: 1nsecure
+       vpc_id: vpc-0a623c5b90a0c8df0
        tags:
          Environment: testing
          Application: cms 
