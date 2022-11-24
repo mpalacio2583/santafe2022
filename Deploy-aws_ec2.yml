@@ -7,7 +7,7 @@
 #    key_name: "{{ key_name_var }}"
 #    instance_type: "{{ instance_type_var }}"
 #    firewall_group_name: "{{ firewall_group_name_var }}"
-    key_name: my_keypair
+    key_name: "{{ keys_name }}"
     instance_type: t2.micro
     firewall_group_name: "{{ security_group }}"
 #    firewall_group_id: sg-03d829ffb469c64d9
