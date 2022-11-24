@@ -2,13 +2,15 @@
 - name: Create AWS resources
   hosts: localhost
   connection: local
-  gather_facts: False  
+  gather_facts: False
+  vars:
+    instances_name: "{{ db_name }}"
     
   tasks:
   - name: create an EC2 instance
     rds:
        command: create
-       instance_name: "{{ db_name }}"  #ingrese el nombre de la instancia.
+       instance_name: "{{ instances_name }}"  #ingrese el nombre de la instancia.
        db_engine: MySQL             #ingrese la base de datos a su gusto.
        region: us-east-1
        size: 10
