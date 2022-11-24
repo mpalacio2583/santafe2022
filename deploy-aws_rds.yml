@@ -13,7 +13,7 @@
        instance_name: "{{ instances_name }}"  #ingrese el nombre de la instancia.
        db_engine: MySQL             #ingrese la base de datos a su gusto.
        region: us-east-2
-       availability_zone: us-east-2a
+       zone: us-east-2a
        size: 10
        instance_type: db.t2.micro
        username: mysql_admin
