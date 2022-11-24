@@ -14,7 +14,7 @@
     ami_id: "{{ id_ami }}"    #verificar que este ID exista en la zona de disponibilidad 
 #    ami_id: ami-00cbb7bf4617ee51d    #verificar que este ID exista en la zona de disponibilidad 
     aws_region: us-east-2
-#    vpc_ids: vpc-da74f8b1
+    vpc_ids: vpc-0a623c5b90a0c8df0
 #    cidr_ips: 172.31.0.0
 #    aws_access_key: "{{ aws_access_keys }}"
 #    aws_secret_key: "{{ aws_secret_keys }}"
@@ -26,6 +26,7 @@
       name: "{{ firewall_group_name }}"
       description: "A Security group"
       region: "{{aws_region}}"
+      vpc_id: "{{vpc_ids}}"
       rules:
         - proto: tcp
           from_port: 22
