@@ -1,0 +1,20 @@
+# Basic provisioning example
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False  
+    
+  tasks:
+  - name: create an EC2 instance
+    rds:
+       command: create
+       instance_name: "{{ db_name }}"  #ingrese el nombre de la instancia.
+       db_engine: MySQL             #ingrese la base de datos a su gusto.
+       region: us-east-1
+       size: 10
+       instance_type: db.t2.micro
+       username: mysql_admin
+       password: 1nsecure
+       tags:
+         Environment: testing
+         Application: cms 
