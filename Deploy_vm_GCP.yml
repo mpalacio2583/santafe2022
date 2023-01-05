@@ -5,10 +5,15 @@
 #  hosts: local
   connection: local
   gather_facts: False
+  var:
+  gcpnetwork: prueba
+  subnetwork: prueba-subnet
+  
   vars_files:
     - gce_vars/auth
     - gce_vars/machines
     - gce_vars/zone
+
   tasks:
     - name: Create an IP address for first instance
       gcp_compute_address:
@@ -59,10 +64,12 @@
             initialize_params:
               source_image: "{{ image }}"
         network_interfaces:
-          - access_configs:
-              - name: External NAT
-                nat_ip: "{{ gceb_ip }}"
-                type: ONE_TO_ONE_NAT
+        - subnetwork: "{{ gcpnetwork }}"
+        - subnetwork: "{{ subnetwork }}"
+          access_configs:
+            - name: External NAT
+              nat_ip: "{{ gceb_ip }}"
+              type: ONE_TO_ONE_NAT
         tags:
           items:
             - http-server
