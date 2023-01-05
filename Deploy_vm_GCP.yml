@@ -4,7 +4,7 @@
   hosts: local
   gather_facts: False
   vars_files:
-    - gce_vars/auth
+#    - gce_vars/auth
     - gce_vars/machines
     - gce_vars/zone
   tasks:
@@ -13,8 +13,8 @@
         name: "{{ name_zonea }}-ip"
         region: "{{ region }}"
         project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
+#        service_account_file: "{{ credentials_file }}"
+#        auth_kind: "{{ auth_kind }}"
       register: gcea_ip
     - name: Bring up the first instance in the first zone.
       gcp_compute_instance:
@@ -36,16 +36,16 @@
             - https-server
         zone: "{{ zone }}"
         project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
+#        service_account_file: "{{ credentials_file }}"
+#        auth_kind: "{{ auth_kind }}"
       register: gcea
     - name: Create an IP address for second instance
       gcp_compute_address:
         name: "{{ name_zoneb }}-ip"
         region: "{{ region }}"
         project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
+#        service_account_file: "{{ credentials_file }}"
+#        auth_kind: "{{ auth_kind }}"
       register: gceb_ip
     - name: Bring up the instance in the second zone.
       gcp_compute_instance:
@@ -67,8 +67,8 @@
             - https-server
         zone: "{{ zone }}"
         project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
+#        service_account_file: "{{ credentials_file }}"
+#        auth_kind: "{{ auth_kind }}"
       register: gceb
   post_tasks:
     - name: Wait for SSH for instances in first zone
