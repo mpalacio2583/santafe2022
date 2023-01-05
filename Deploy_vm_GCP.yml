@@ -6,8 +6,8 @@
   connection: local
   gather_facts: False
   vars:
-  gcpnetwork: prueba
-  subnetwork: prueba-subnet
+    gcpnetwork: prueba
+    subnetwork: prueba-subnet
   
   vars_files:
     - gce_vars/auth
