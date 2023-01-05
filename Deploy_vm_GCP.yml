@@ -6,7 +6,7 @@
   connection: local
   gather_facts: False
   vars_files:
-#    - gce_vars/auth
+    - gce_vars/auth
     - gce_vars/machines
     - gce_vars/zone
   tasks:
