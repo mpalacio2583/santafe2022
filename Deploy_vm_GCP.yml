@@ -64,8 +64,8 @@
             initialize_params:
               source_image: "{{ image }}"
         network_interfaces:
-        - subnetwork: "{{ gcpnetwork }}"
-        - subnetwork: "{{ subnetwork }}"
+          - subnetwork: "{{ gcpnetwork }}"
+          - subnetwork: "{{ subnetwork }}"
           access_configs:
             - name: External NAT
               nat_ip: "{{ gceb_ip }}"
