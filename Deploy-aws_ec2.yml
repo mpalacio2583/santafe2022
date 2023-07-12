@@ -14,7 +14,7 @@
     ami_id: "{{ id_ami }}"    #verificar que este ID exista en la zona de disponibilidad 
 #    ami_id: ami-00cbb7bf4617ee51d    #verificar que este ID exista en la zona de disponibilidad 
     aws_region: us-east-1
-    vpc_ids: vpc-0baf047ecfc61b714
+    vpc_ids: "{{ vpc_id }}"
 #    cidr_ips: 172.31.0.0
 #    aws_access_key: "{{ aws_access_keys }}"
 #    aws_secret_key: "{{ aws_secret_keys }}"
