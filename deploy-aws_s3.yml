@@ -7,4 +7,4 @@
         aws_s3:
           bucket:  "{{ bucket_name }}"
           mode: create
-          region: us-east-2
+          region: us-east-1
