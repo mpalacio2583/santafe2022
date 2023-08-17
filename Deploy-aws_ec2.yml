@@ -46,7 +46,7 @@
       group_id: "{{basic_firewall.group_id}}"
       instance_type: "{{instance_type}}"
       image: "{{ami_id}}"
-      vpc_subnet_id: subnet-0076e8e7caecd444e
+      vpc_subnet_id: subnet-06a2e51dde8c5fa92
       assign_public_ip: yes
       wait: yes
     register: basic_ec2
